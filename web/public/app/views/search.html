@@ -1,0 +1,83 @@
+<div id="div_search" class="row col-lg-offset-4 col-lg-4">
+    <form name="search_form" ng-submit="submit(search_form)" class="form-horizontal" role="form">
+        <div class="control-group">
+            <label class="control-label" for="store">Store: </label>
+            <div class="controls">
+                <select id="store" name="store"
+                        ng-model="store"
+                        ng-required="true"
+                        ng-options="store as store.name for store in stores">
+                    <option value="">Chooce an option</option>
+                </select>
+            </div>
+            <span ng-show="search_form.store.$invalid && formError">Campo requerido</span>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="product">Product: </label>
+            <div class="controls">
+                <select id="product" name="product"
+                        ng-model="product"
+                        ng-required="true"
+                        ng-options="product as product.name for product in products">
+                    <option value="">Choose an option</option>
+                </select>
+            </div>
+            <span ng-show="search_form.product.$invalid && formError">Campo requerido</span>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="submit"></label>
+            <div class="controls">
+                <button type="submit" id="submit" class="btn btn-info">Buscar</button>
+            </div>
+        </div>
+    </form>
+
+    <div ng-if="productSelected != null && productSelected">
+        <form name="purchase_form" ng-submit="purchase(purchase_form)" class="form-horizontal" role="form">
+            <div class="control-group">
+                <label class="control-label" for="volume">Cantidad: </label>
+                <div class="controls">
+                    <input type="text" id="volume" name="volume" ng-model="volume" ng-required="true">
+                </div>
+                <span ng-show="purchase_form.volume.$invalid && purchaseFormError">Campo requerido</span>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="comprar"></label>
+                <div class="controls">
+                    <button type="submit" id="comprar" class="btn btn-info">Comprar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div ng-if="productSelected === false">
+        <form name="searchStore_form" ng-submit="searchOtherStore()" class="form-horizontal" role="form">
+            <div class="control-group">
+                <label class="control-label" for="search"></label>
+                <div class="controls">
+                    <button type="submit" id="search" class="btn btn-info">Search in other store</button>
+                </div>
+            </div>
+            <div>
+                Results:
+                <div id="div_product">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>Name</td>
+                            <td>Adrress</td>
+                        </tr>
+                        </thead>
+                        <tr ng-repeat="store in otherStores">
+                            <td>{{ store.id }}</td>
+                            <td>{{ store.name }}</td>
+                            <td>{{ store.address }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

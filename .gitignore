@@ -1,0 +1,7 @@
+vendor
+composer.lock
+.idea
+web/public/vendor
+logs/*.log
+cache/proxies
+database/*.bak

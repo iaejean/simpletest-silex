@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <header class="navbar navbar-default navbar-fixed-top navbar-static-top navbar-inner navbar-inverse"
+            ng-controller="headerController"
+            ng-include="'web/public/app/views/header.html'"></header>
+
+    <br/><br/><br/>
+    <div id="wrapper"><div class="container" data-ui-view></div></div>
+    <br/><br/><br/>
+
+    <footer class="footer"
+            ng-controller="footerController"
+            ng-include="'web/public/app/views/footer.html'"></footer>
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="web/public/vendor/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="web/public/vendor/angular-bootstrap/ui-bootstrap-csp.css" />
+    <link rel="stylesheet" href="web/public/vendor/angular-loading-bar/build/loading-bar.min.css" />
+{% endblock %}
+
+{% block javascripts %}
+    <script src="web/public/vendor/requirejs/require.js" data-main="web/public/app/main.js"></script>
+{% endblock %}

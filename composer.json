@@ -1,0 +1,29 @@
+{
+  "name": "iaejean/store",
+  "description": "Simple test with Silex and Doctrine ORM",
+  "type": "project",
+  "license": "Apache License 2.0",
+  "authors": [
+    {
+      "name": "Israel Hernandez",
+      "email": "iaejean@hotmail.com"
+    }
+  ],
+  "require": {
+    "php": ">= 7",
+    "silex/silex": "2.0.*",
+    "jms-serializer/serializer": "1.*",
+    "psr/log": "1.0.*",
+    "apache/log4php": "2.3.*",
+    "marcelog/ding": "dev-master",
+    "doctrine/dbal": "2.5.*",
+    "symfony/doctrine-bridge": "3.1.*",
+    "dflydev/doctrine-orm-service-provider": "v2.0.1",
+    "twig/twig": "1.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Iaejean\\": "src/Iaejean/"
+    }
+  }
+}

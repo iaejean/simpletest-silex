@@ -1,0 +1,18 @@
+<div id="div_product" class="row">
+    <div class="col-lg-offset-2 col-lg-8">
+        <table class="table">
+            <thead>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Adrress</td>
+            </tr>
+            </thead>
+            <tr ng-repeat="store in stores">
+                <td>{{ store.id }}</td>
+                <td>{{ store.name }}</td>
+                <td>{{ store.address }}</td>
+            </tr>
+        </table>
+    </div>
+</div>
